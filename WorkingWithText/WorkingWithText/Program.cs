@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,11 @@ namespace WorkingWithText
         static void Main(string[] args)
         {
             //Exercise1();
-            Exercise2();
+            //Exercise2();
+            //Exercise3();
+            //Exercise4();
+            Exercise5();
+
             Console.ReadLine();
         }
 
@@ -103,7 +108,15 @@ namespace WorkingWithText
                 Console.WriteLine("Invalid Time");
                 return;
             }
-            else if()
+
+            var validTime = input.Split(':');
+            var hours = Convert.ToInt32(validTime[0]);
+            var minutes = Convert.ToInt32(validTime[1]);
+
+            if (hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59)
+                Console.WriteLine("Ok");
+            else
+                Console.WriteLine("Invalid Time");
         }
 
 
@@ -113,12 +126,49 @@ namespace WorkingWithText
         Make sure that the program is not dependent on the input. So, if the user types "NUMBER OF STUDENTS", the program 
         should still display "NumberOfStudents".
         */
+        public static void Exercise4()
+        {
+            Console.WriteLine("Enter a few words, separated by spaces: ");
+            var input = Console.ReadLine();
 
-
+            if (String.IsNullOrWhiteSpace(input))
+                return;
+            else
+            { 
+                //input.ToLower();
+                string makeFirstCapital = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower());
+                string PascalCase = makeFirstCapital.Replace(" ", "");
+                Console.WriteLine(PascalCase);
+            }
+        }
 
         /*
         5- Write a program and ask the user to enter an English word. Count the number of vowels (a, e, o, u, i) in the word. 
         So, if the user enters "inadequate", the program should display 6 on the console.
         */
+        public static void Exercise5()
+        {
+            Console.WriteLine("Enter an English word: ");
+            var input = Console.ReadLine().ToLower();
+
+            var vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+
+            var count = 0;
+            foreach (char c in input)
+            {
+                if (vowels.Contains(c))
+                    count++;
+                else
+                    continue;
+            }
+
+            if (count == 0)
+                Console.WriteLine("There are no vowels in your word.");
+            else if (count == 1)
+                Console.WriteLine("There is {0} vowel in your word.", count);
+            else
+                Console.WriteLine("There are {0} vowels in your word.", count);
+
+        }
     }
 }
