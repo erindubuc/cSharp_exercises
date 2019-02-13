@@ -1,0 +1,1 @@
+Hi. This file contains words.  These words will be counted by the program.  There should be eighteen words.
