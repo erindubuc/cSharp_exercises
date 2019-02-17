@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StopWatch
@@ -23,19 +24,50 @@ namespace StopWatch
     
     class Program
     {
+        static void Main(string[] args)
+        {
+            var stopwatch = new StopWatch();
+
+            for (var i = 0; i < 2; i++)
+            {
+                stopwatch.StartRunning();
+                Thread.Sleep(1000);
+                stopwatch.StopRunning();
+
+                Console.WriteLine("Duration: " + stopwatch.GetDuration());
+                Console.WriteLine("Press ENTER if you'd like to run the stop watch for a second time.");
+                Console.ReadLine();
+            }
+        }
+
         public class StopWatch
         {
             private DateTime _start;
             private DateTime _stop;
+            private bool _isRunning;
 
-            public DateTime Start { get => _start; set => _start = value; }
-            public DateTime Stop { get => _stop; set => _stop = value; }
+            public void StartRunning()
+            {
+                if (_isRunning)
+                    throw new InvalidOperationException("The stopwatch is currently running.");
 
-            public TimeSpan Duration() => Stop - Start;
-        }
+                _start = DateTime.Now;
+                _isRunning = true;
+            }
 
-        static void Main(string[] args)
-        {
+            public void StopRunning()
+            {
+                if (!_isRunning)
+                    throw new InvalidOperationException("The stopwatch is not currently running.");
+
+                _stop = DateTime.Now;
+                _isRunning = false;
+            }
+
+            public TimeSpan GetDuration()
+            {
+                return _stop - _start;
+            }
         }
     }
 }
