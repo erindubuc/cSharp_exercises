@@ -21,6 +21,57 @@ namespace StackOverflow
     {
         static void Main(string[] args)
         {
+            var post = new Post
+            {
+                Title = "C# Classes Help",
+                Description = "Confusion about when to use private and public",
+            };
+
+            post.AddDownVote();
+            post.AddUpVote();
+            post.AddUpVote();
+            post.AddUpVote();
+            post.ShowActualPost();
+            Console.ReadLine();
+        }
+
+        public class Post
+        {
+            private string _title;
+            private string _description;
+            private DateTime _createdOn { get; } = DateTime.UtcNow;
+
+            public string Title { get => _title; set => _title = value; }
+            public string Description { get => _description; set => _description = value; }
+            public int _upVotes { get; private set; }
+            public int _downVotes { get; private set; }
+
+            public int AddUpVote()
+            {
+                return _upVotes++;
+            }
+
+            public int AddDownVote()
+            {
+                return _downVotes++;
+            }
+
+            public int TotalVoteCount()
+            {
+                return _upVotes + _downVotes;
+            }
+
+            public void ShowActualPost()
+            {
+                Console.WriteLine("Date Posted: " + _createdOn.ToLongDateString());
+                Console.WriteLine();
+                Console.WriteLine("Title: " + Title);
+                Console.WriteLine();
+                Console.WriteLine("Brief Description: " + Description);
+                Console.WriteLine();
+                Console.WriteLine("Thumbs-up: {0}   Thumbs-down: {1}", _upVotes, _downVotes);
+                Console.WriteLine("Total Votes for this post: {0}", TotalVoteCount());
+            }
         }
 
     }
