@@ -35,7 +35,7 @@ namespace BouncingBall
                 return -1;
 
             //bounce can't be less than 0 or greater than 1
-            if (bounceRate < 0 || bounceRate > 1)
+            if (bounceRate <= 0 || bounceRate >= 1)
                 return -1;
 
             double bounceHeight = bounceRate * height;
