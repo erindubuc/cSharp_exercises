@@ -11,7 +11,7 @@ namespace GameChallenge
         static void Main(string[] args)
         {
             var g = new Game();
-            g.DrawBoard(6, 6);
+            g.DrawBoard(6, 30);
         
             Console.ReadLine();
         }

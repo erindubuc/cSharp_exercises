@@ -13,7 +13,7 @@ namespace GameChallenge
             for (int i = 1; i < width; i++)
                 Console.Write("     |");
 
-            Console.WriteLine("     ");
+            Console.WriteLine("     |");
         }
 
         public void DrawLineRow(int width)
@@ -21,7 +21,7 @@ namespace GameChallenge
             for (int i = 1; i < width; i++)
                 Console.Write("_____|");
 
-            Console.WriteLine("_____");
+            Console.WriteLine("_____|");
         }
 
         public void DrawBoard(int width, int height)
