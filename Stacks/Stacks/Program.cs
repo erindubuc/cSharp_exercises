@@ -19,7 +19,7 @@ namespace Stacks
             */
 
 
-            // Can access the stack class directly from System
+            // Can access the stack class directly from System.Collections
             // Declare what data type your stack will hold --> can be any
             Stack<int> myStack = new Stack<int>();
 
