@@ -10,8 +10,8 @@ namespace GameChallenge
     {
         static void Main(string[] args)
         {
-            var game = new BoardGame();
-            game.DrawGameBoard(6, 30);
+            BoardGame game = new BoardGame();
+            game.DrawGameBoard(6, 7);
         
             Console.ReadLine();
         }
