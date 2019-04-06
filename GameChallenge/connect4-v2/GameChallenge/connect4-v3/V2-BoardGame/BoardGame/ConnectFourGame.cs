@@ -65,7 +65,7 @@ namespace BoardGame
         public State GetStateOfCoordinate(int xCoordinate, int yCoordinate)
         {
            
-            return _board[xCoordinate - 1, yCoordinate];
+            return _board[xCoordinate, yCoordinate];
         }
        
 

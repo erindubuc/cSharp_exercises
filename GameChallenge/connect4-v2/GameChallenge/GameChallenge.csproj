@@ -44,12 +44,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\Board.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\ConnectFourGame.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\Program.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\Properties\AssemblyInfo.cs" />
+    <Compile Include="connect4-v3\V2-BoardGame\BoardGame\State.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\BoardGame\v15\.suo" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\BoardGame\v15\Server\sqlite3\db.lock" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\BoardGame\v15\Server\sqlite3\storage.ide" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\BoardGame\v15\Server\sqlite3\storage.ide-shm" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\BoardGame\v15\Server\sqlite3\storage.ide-wal" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\ProjectSettings.json" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\slnx.sqlite" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\V2-BoardGame\v15\.suo" />
+    <None Include="connect4-v3\V2-BoardGame\.vs\VSWorkspaceState.json" />
+    <None Include="connect4-v3\V2-BoardGame\BoardGame\App.config" />
+    <None Include="connect4-v3\V2-BoardGame\BoardGame\bin\Debug\BoardGame.exe.config" />
+    <None Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\BoardGame.csproj.CoreCompileInputs.cache" />
+    <None Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\BoardGame.csprojAssemblyReference.cache" />
+    <None Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="connect4-v3\V2-BoardGame\BoardGame\obj\Release\BoardGame.csproj.CoreCompileInputs.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="connect4-v3\V2-BoardGame\BoardGame.sln" />
+    <Content Include="connect4-v3\V2-BoardGame\BoardGame\bin\Debug\BoardGame.exe" />
+    <Content Include="connect4-v3\V2-BoardGame\BoardGame\bin\Debug\BoardGame.pdb" />
+    <Content Include="connect4-v3\V2-BoardGame\BoardGame\BoardGame.csproj" />
+    <Content Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\BoardGame.csproj.FileListAbsolute.txt" />
+    <Content Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\BoardGame.exe" />
+    <Content Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\BoardGame.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="connect4-v3\V2-BoardGame\BoardGame\bin\Release\" />
+    <Folder Include="connect4-v3\V2-BoardGame\BoardGame\obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
