@@ -29,6 +29,7 @@ namespace BoardGame
             }
         }
 
+        // want to change this to just accept the yCoordinate - only need to worry about the column
         public void ApplyMove(int xCoordinate, int yCoordinate)
         {
                        

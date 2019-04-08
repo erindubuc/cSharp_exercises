@@ -36,12 +36,7 @@ namespace BoardGame
 
             Console.ReadLine();
         }
-        /*
-        private static string GetPrintableChar()
-        {
-            State stateOfCoordinate = BoardGame.State
-        }
-        */
+        
 
     }
 }
