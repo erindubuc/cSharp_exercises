@@ -29,45 +29,41 @@ namespace BoardGame
             }
         }
 
-        // want to change this to just accept the yCoordinate - only need to worry about the column
-        public void ApplyMove(int xCoordinate, int yCoordinate)
+        public void ApplyMove(int column)
         {
-                       
-            if (xCoordinate < 0 || xCoordinate > 6)
+            State state = MovesCounter % 2 == 0 ? State.X : State.O;
+            for (int row = _board.GetLength(0) - 1; row >= 0; row--)
             {
-                Console.WriteLine("You can only choose an x-coordinate from 0-6");
-                throw new ArgumentOutOfRangeException();
-            }
+                if (_board[row, column] < 0)
+                {
+                    Console.WriteLine("You can only choose a column from 0-6");
+                    continue;
+                }
 
-            if (yCoordinate < 0 || yCoordinate > 5)
-            {
-                Console.WriteLine("You can only choose a y-coordinate from 0-5");
-            }
+                if (_board[0, column] != State.empty)
+                {
+                    Console.WriteLine("Oops!This spot is already taken!");
+                    continue;
+                }
 
-            
-            if (_board[xCoordinate, yCoordinate] != State.empty)
-            {
-                Console.WriteLine("Oops! This spot is already taken. Please try again.");
+                else
+                {
+                    _board[row, column] = state;
+                    Console.WriteLine($"{_board[row, column]} you moved to {column}");
 
+
+
+                }
             }
-            
-            // if spot below chosen spot is empty
-            if (_board[xCoordinate, yCoordinate + 1] == State.empty)
-            {
-                Console.WriteLine("There can't be an empty spot below your chosen spot! Gravity takes over! Please try again.");
-            }
-            
-             _board[xCoordinate,yCoordinate] = MovesCounter % 2 == 0 ? State.X : State.O;
-            Console.WriteLine($"{_board[xCoordinate, yCoordinate]}, you moved to {xCoordinate}, {yCoordinate}");
 
             MovesCounter++;
         }
 
-        public State GetStateOfCoordinate(int xCoordinate, int yCoordinate)
-        {
+        //public State GetStateOfCoordinateint yCoordinate)
+        //{
            
-            return _board[xCoordinate, yCoordinate];
-        }
+        //    return _board[xCoordinate, yCoordinate];
+        //}
        
 
     }

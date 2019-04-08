@@ -23,13 +23,11 @@ namespace BoardGame
             ConnectFourGame game = new ConnectFourGame();
             while (ConnectFourGame.MovesCounter < 42)
             {
-                Console.WriteLine("Enter an x-coordinate from 0-6");
-                int xCoordinate = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("Enter a column from 0-6");
+                int column = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Enter a y-coordinate from 0-5");
-                int yCoordinate = Int32.Parse(Console.ReadLine());
-
-                game.ApplyMove(xCoordinate, yCoordinate);
+               
+                game.ApplyMove(column);
 
                 Console.WriteLine();
             }
